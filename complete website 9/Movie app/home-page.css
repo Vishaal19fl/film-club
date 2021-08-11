@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color:#222;
+    --secondary-color: #ffd000;
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width:1.3rem;
+  }
+  
+  html::-webkit-scrollbar-track{
+    background:#000;
+  }
+  
+  html::-webkit-scrollbar-thumb{
+    background:orange;
+  }
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem 2rem;
+    position:sticky;
+    top:0; left: 0;
+    z-index: 100;
+    background-color: #00000071;
+}
+header .logo{
+    font-size: 1.5rem;
+    color:#fff;
+    text-decoration: none;
+  }
+.search{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding:0.5rem 1rem;
+    margin-right: 300px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1rem;
+    color:#fff;
+    font-family: inherit;
+}
+
+.search:focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder{
+    color: #525252;
+}
+
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--secondary-color);
+    position:relative;
+    overflow: hidden;
+}
+
+
+.movie img{
+    width:100%;
+}
+
+.movie-info{
+    color:#eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+    color: #333;
+}
+
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color:lightgreen;
+}
+
+.movie-info span.orange{
+    color:orange;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform:translateY(0)
+}
+.home{
+    min-height: 60vh;
+    width: 100vw;
+    background:rgba(0,0,0,0.5)url(https://bingeflix.in/wp-content/uploads/2021/03/Netflix-Background.jpg);
+    display: flex;
+    background-size: cover;
+    background-blend-mode: darken;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    padding:0 1rem;
+    position: relative;
+    overflow: hidden !important;
+  }
+  
+  .home .banner{
+    color:#fff;
+    font-size: 4rem;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+  }
+  
+  .home .slogan{
+    color:rgb(255, 255, 255);
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  
+  .home button{
+    height: 4rem;
+    width: 18rem;
+    background:#fff;
+    color: #444;
+    cursor: pointer;
+    border:none;
+    outline: none;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 20px;
+    font-weight: 400;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+  }
+  
+  .home button:hover{
+    letter-spacing: .1rem;
+  }
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    font-size: 14px;
+    color:white;
+    padding:10px 25px;
+    background-color: orange;
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.tag.highlight{
+    background-color: red;
+}
+.no-results{
+    color:white;
+}
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.know-more{
+    background-color: orange;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+      margin-top: 30px;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  .loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }
+
+  .footer1{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 2rem;
+    margin-top: 1rem;
+    background:orange;
+  }
+  
+  .footer1 h1{
+    font-size: 15px;
+    color:#fff;
+    letter-spacing: .1rem;
+    font-weight: 400;
+  }
+  
+  .footer1 .icons a{
+    color:#fff;
+    font-size: 1.8rem;
+    padding:0 1rem;
+  }
+  
+  
+  
+
+  @media (max-width:550px){
+    .footer1{
+      flex-flow: column;
+      
+    }
+    .footer1 h1{
+      text-align: center;
+      font-size: 14px;
+      
+    }
+    .footer1 .icons{
+      padding:2rem 0;
+    }
+    
+  }
+  @media (max-width:768px) {
+
+    
+    .movie {
+        
+        width: 300px;
+        margin: 1rem;
+        border-radius: 3px;
+        box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+        background-color: var(--secondary-color);
+        position:relative;
+        overflow: hidden;
+    }
+    .home{
+        min-height: 40vh;
+    }
+    .home .banner{
+        color:#fff;
+        font-size: 2rem;
+        text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+      }
+      
+      .home .slogan{
+        color:rgb(255, 255, 255);
+        font-size: 1.5rem;
+        font-weight: 500;
+      }  
+      .overlay a {
+      
+      margin-top: 50px;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: inline; /* Display block instead of inline */
+      transition: 0.3s; /* Transition effects on hover (color) */
+    }
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+      }
+    .overlay .closebtn {
+        position:initial;
+        margin-top: 70px;
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+    .overlay-content {
+        font-size: 13px;
+        
+        top: 10%; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    }
+    #overlay-content iframe{
+        width: 250px;
+        
+
+    }
+    #overlay-content .dot{
+        display: inline-block;
+    }
+    .tag{
+        color:white;
+        padding:10px 20px;
+        font-size: 10px;
+        background-color: orange;
+        border-radius: 50px;
+        margin:5px ;
+        display:inline-block;
+        cursor: pointer;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding:1rem 2rem;
+        
+        top:0; left: 0;
+        z-index: 100;
+        background-color: #1b1b1ba8;
+    }
+    header .logo{
+        margin-right: 50px;
+
+        font-size: 20px;
+        color:#fff;
+        text-decoration: none;
+      }
+    header .search{
+        margin-right: 0px;
+        width: 96%;
+    }
+    .overlay-content {
+        position: relative;
+        top: 5%; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+      }  
+  }
+  @media (prefers-color-scheme: light) {
+      .movie-info h3{
+          color: rgb(0, 0, 0);
+      }
+  }
+  @media (max-width:1000px) {
+    .movie {
+        
+        width: 300px;
+        margin: 1rem;
+        border-radius: 3px;
+        box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+        background-color: var(--secondary-color);
+        position:relative;
+        overflow: hidden;
+    }
+    .home{
+        min-height: 40vh;
+    }
+    .overlay .closebtn {
+        position:initial;
+        margin-top: 70px;
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+    .home .banner{
+        color:#fff;
+        font-size: 2rem;
+        text-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+      }
+      
+      .home .slogan{
+        color:rgb(255, 255, 255);
+        font-size: 1.5rem;
+        font-weight: 500;
+      }  
+      .overlay a {
+      
+      margin-top: 50px;
+      padding: 8px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block; /* Display block instead of inline */
+      transition: 0.3s; /* Transition effects on hover (color) */
+    }
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+    .overlay-content {
+        font-size: 13px;
+        
+        top: 10%; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    }
+    #overlay-content iframe{
+        width: 250px;
+        
+
+    }
+    #overlay-content .dot{
+        display: inline-block;
+    }
+    .tag{
+        color:white;
+        padding:10px 20px;
+        font-size: 10px;
+        background-color: orange;
+        border-radius: 50px;
+        margin:5px ;
+        display:inline-block;
+        cursor: pointer;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding:1rem 2rem;
+        
+        top:0; left: 0;
+        z-index: 100;
+        background-color: #1b1b1ba8;
+    }
+    header .logo{
+        margin-right: 50px;
+
+        font-size: 20px;
+        color:#fff;
+        text-decoration: none;
+      }
+    header .search{
+        margin-right: 0px;
+        width: 96%;
+    }
+    .overlay-content {
+        position: relative;
+        top: 5%; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+      }
+  }
+
+
+  .embed.hide{
+      display: none;
+  }
+
+  .embed.show{
+      display: inline-block;
+  }
+
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+}
+
+.dots{
+    margin-top: 30px;
+}
+
+.dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+    display: inline-block;
+}
+
+.dots .dot.active{
+    border-color: orange;
+}

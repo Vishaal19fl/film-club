@@ -219,7 +219,9 @@ main{
     padding:20px;
     cursor:pointer;
 }
-
+.page:hover{
+  color: orange;
+}
 .page.disabled{
     cursor:not-allowed;
     color:grey;

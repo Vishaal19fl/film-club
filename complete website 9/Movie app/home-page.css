@@ -220,7 +220,7 @@ main{
     cursor:pointer;
 }
 .page:hover{
-  color: orange;
+    color: orange;
 }
 .page.disabled{
     cursor:not-allowed;

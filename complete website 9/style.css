@@ -1103,7 +1103,7 @@ header.sticky{
     width: 90vw;
   }
   .about1{
-    padding:2rem;
+    padding:0 2rem;
   }
   .service .row{
     flex-flow: column-reverse;
@@ -1192,6 +1192,10 @@ header.sticky{
     color:rgb(255, 255, 255);
     font-size: 2.5rem;
     font-weight: 500;
+    
+  }
+  .screen{
+    padding:0 2rem
   }
 
 }

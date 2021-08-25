@@ -855,7 +855,7 @@ header.sticky{
   transform: rotate(180deg);
 }
 .about1 .row .content p{
-  font-size: 2rem;
+  font-size: 3rem;
   color: #333;
   padding:1rem 0;
 }
@@ -863,7 +863,7 @@ header.sticky{
 .about1 .row .content li{
   font-size: 1.8rem;
   color: #333;
-  padding:1rem 0;
+  padding:1rem 2rem;
   margin-left: 50px;
 }
 
@@ -1102,7 +1102,9 @@ header.sticky{
   .about .row .image img{
     width: 90vw;
   }
-
+  .about1{
+    padding:2rem;
+  }
   .service .row{
     flex-flow: column-reverse;
   }

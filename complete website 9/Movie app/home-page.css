@@ -132,7 +132,8 @@ main{
 }
 
 .movie:hover .overview{
-    transform:translateY(0)
+    transform:translateY(0);
+    overflow:scroll;
 }
 .home{
     min-height: 60vh;

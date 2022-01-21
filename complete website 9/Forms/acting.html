@@ -30,67 +30,70 @@
 
 <section id="contact" class="contact">
 
-    <h1 class="heading">join us as Actor</h1>
-    
-    
-    <div class="row">
-    
-      <div class="image">
-        <img src="../images/cinema ticket2.jpg" alt="">
+<h1 class="heading">join us</h1>
+
+
+<div class="row">
+
+  <div class="image">
+    <img src="images/cinema ticket2.jpg" alt="">
+  </div>
+
+  <div class="form-container">
+    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScenP2Hlqa0y-xZDrdd8Todn22bwhqMiyJ88JlC9a_a_uhsNg/formResponse" method="POST" name="google-forms" id="sheetdb-form" onsubmit="return validateForm();">
+      <div id="form_alerts"></div>
+      <div class="inputBox">
+        <input id="name" type="text" placeholder="first name" name="entry.914691954">
+        <input type="text" placeholder="last name" name="entry.474216538">
       </div>
-    
-      <div class="form-container">
-        <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSev-lCwlsXMlEmmB6mqq49FB_IXPUbBSHsftehOW_bvni6zfA/formResponse" method="POST" name="google-forms" id="sheetdb-form" onsubmit="return validateForm();">
-          <div id="form_alerts"></div>
-          <div class="inputBox">
-            <input id="name" type="text" placeholder="first name" name="entry.1954949721">
-            <input type="text" placeholder="last name" name="entry.977281436">
-          </div>
-    
-          <p>Specify the field you are interested in :</p>
-          <div>
-            <select name="entry.893154288" id="options" required>
-              <option value="Select" selected disabled>Select</option>
-              <option value="Acting" selected>Acting</option>
-              <option value="Direction" >Direction</option>
-              <option value="Script Writing">Script Writing</option>
-              <option value="Cinematography">Cinematography</option>
-              <option value="Music Direction">Music Direction</option>
-            </select>
-          </div>
-    
-          <input id="email" type="email" placeholder="Email" name="emailAddress">
-          <script>
-            function validateEmail () {
-    
-              var email = document.getElementById('email').value;
-              if(email.length == 0) {
-                alert("Email can't be blank") ;//Validation Message
-                return false;
-    
-              }
-    
-              if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.com][a-z]{2,4}$/)) {
-                alert("Please enter a correct email address") ;//Validation Message
-                return false;
-    
-              }
-            }  
-          </script>
-          <input id="phone" type="text" placeholder="Whatsapp Number" name="entry.333544665">
-          
-          <textarea name="entry.2038142069" id="" cols="30" rows="10" placeholder="Tell us about your interest in cinema (Optional)" ></textarea>
-          
-          <button onclick="return validateForm();"type="submit">Submit</button>
-          
-          
-        </form>
-        <h4>Check the Email id and Phone Number for mistakes. </h4>
+
+      <p>Specify the field you are interested in :</p>
+      <div>
+        <select name="entry.613978044" id="options" required>
+          <option value="Select" selected disabled>Select</option>
+          <option value="Acting" selected>Acting</option>
+          <option value="Direction">Direction</option>
+          <option value="Script Writing">Script Writing</option>
+          <option value="Cinematography">Cinematography</option>
+          <option value="Music Direction">Music Direction</option>
+        </select>
       </div>
-    
-    </div>
-    
-    </section>
+
+      <input id="email" type="email" placeholder="Email" name="emailAddress">
+      <script>
+        function validateEmail () {
+
+          var email = document.getElementById('email').value;
+          if(email.length == 0) {
+            alert("Email can't be blank") ;//Validation Message
+            return false;
+
+          }
+
+          if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.com][a-z]{2,4}$/)) {
+            alert("Please enter a correct email address") ;//Validation Message
+            return false;
+
+          }
+        }  
+      </script>
+      <input id="phone" type="text" placeholder="Whatsapp Number" name="entry.267905653">
+      
+      <textarea name="entry.701907986" id="" cols="30" rows="10" placeholder="Tell us about your interest in cinema (Optional)" ></textarea>
+      
+      <button onclick="return validateForm();"type="submit">Submit</button>
+      
+      
+    </form>
+    <h4>Check the Email id and Phone Number for mistakes. </h4>
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- contact section ends -->
 
     <section id="about" class="about1">
 

@@ -1158,8 +1158,8 @@ header.sticky{
   }
 
   .faq .row .image img{
-    height: 78vw;
-    width:90vw;
+    height: 100vh;
+    width:40vw;
     padding-right:20px;
   }
 

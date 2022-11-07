@@ -1245,10 +1245,10 @@ header.sticky{
     
 }
   .search .content h3{
-    margin-left: 15px
+    margin-left: 20px
   }
   .search .content p{
-    margin-left: 15px
+    margin-left: 20px
 }
 }
 @media (max-width:1000px) {

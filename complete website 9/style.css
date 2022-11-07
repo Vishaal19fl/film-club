@@ -1242,6 +1242,13 @@ header.sticky{
   .about .row .image img{
   height:60vh;
   width: 80vw;
+    
+}
+  .search .content h3{
+    margin-left: 15px
+  }
+  .search .content p{
+    margin-left: 15px
 }
 }
 @media (max-width:1000px) {

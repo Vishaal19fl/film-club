@@ -1100,6 +1100,7 @@ header.sticky{
   }
   .home{
     background:url(./images/bgphone2.jpg);
+    background-size:cover;
   }
   .home .banner{
     font-size: 4rem;

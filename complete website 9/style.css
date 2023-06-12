@@ -161,12 +161,12 @@ header.sticky{
 .home{
   min-height: 100vh;
   width: 100vw;
-  background:rgba(0,0,0,0.5)url(./images/bg-3.jpg);
+  background:rgba(0,0,0,0.5)url(./images/fcbg3.jpg);
   display: flex;
   background-size: cover;
   background-blend-mode: darken;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-flow: column;
   text-align: center;
   padding:0 1rem;
@@ -1098,7 +1098,9 @@ header.sticky{
   .header .nav-toggle{
     top:5.8rem;
   }
-
+  .home{
+    background:url(./images/bgphone2.jpg);
+  }
   .home .banner{
     font-size: 4rem;
     

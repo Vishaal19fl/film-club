@@ -438,6 +438,7 @@ header.sticky{
   text-align: center;
   margin:7rem 2rem;
   position: relative;
+  border-radius:15px;
   overflow: hidden;
   -webkit-box-reflect: below .2rem linear-gradient(transparent 70%, #0004);
 }

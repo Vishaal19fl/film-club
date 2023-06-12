@@ -1112,6 +1112,9 @@ header.sticky{
     background:url(./images/bgphone2.jpg);
     background-size:cover;
   }
+  .home h1,p,h3,a{
+  padding-left: 20px;
+}
   .home .banner{
     font-size: 4rem;
     

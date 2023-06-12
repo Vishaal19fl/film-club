@@ -158,6 +158,14 @@ header.sticky{
   font-size: 2.5rem;
   color:#fff;
 }
+.hero-subtitle {
+  color: var(--citrine);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  margin-bottom: 10px;
+}
+
+.hero-title { margin-bottom: 30px; }
 .home{
   min-height: 100vh;
   width: 100vw;
@@ -165,15 +173,17 @@ header.sticky{
   display: flex;
   background-size: cover;
   background-blend-mode: darken;
-  align-items: center;
-  justify-content: center;
+  align-items:flex-start;
+  justify-content:center;
   flex-flow: column;
-  text-align: center;
+  text-align: left;
   padding:0 1rem;
   position: relative;
   overflow: hidden !important;
 }
-
+.home h1,p,h3,a{
+  padding-left: 50px;
+}
 .home .banner{
   color:#fff;
   font-size: 5rem;

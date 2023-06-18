@@ -437,6 +437,8 @@ header.sticky{
   background:#fff;
   text-align: center;
   margin:7rem 2rem;
+  align-items:center;
+  justify-content:center;
   position: relative;
   border-radius:15px;
   overflow: hidden;

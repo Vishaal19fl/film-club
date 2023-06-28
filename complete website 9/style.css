@@ -500,7 +500,7 @@ header.sticky{
 }
 
 .team .row .card::after{
-  background:#ccc;
+  background:#444444;
   bottom:-3rem; left: -4rem;
 }
 

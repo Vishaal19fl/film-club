@@ -466,6 +466,7 @@ header.sticky{
 .team .row .card .info h3{
   font-size: 2rem;
   color:#333;
+  padding-left:0%;
 }
 
 .team .row .card .info span{
